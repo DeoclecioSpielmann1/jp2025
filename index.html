@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venda de Carro</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ===== Estilos Custom ===== */
+      body {
+        font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Navbar fixa */
+      .navbar {
+        background-color: #000;
+      }
+      .navbar a {
+        color: white !important;
+        font-weight: bold;
+      }
+
+      /* Hero */
+      .hero {
+        height: 100vh;
+        background: url("https://source.unsplash.com/1600x900/?car,luxury") center/cover
+          no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      /* Seção sobre */
+      .sobre img {
+        max-width: 100%;
+        border-radius: 12px;
+      }
+
+      /* Depoimentos */
+      .carousel-item {
+        padding: 2rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+
+      /* Formulário */
+      form {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      footer {
+        background: #000;
+        color: white;
+        text-align: center;
+        padding: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand text-white" href="#">🚗 Carro Premium</a>
+        <button
+          class="navbar-toggler bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#hero">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+            <li class="nav-item"><a class="nav-link" href="#info">Informações</a></li>
+            <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero d-flex flex-column justify-content-center" id="hero">
+      <div class="container">
+        <h1>Seu próximo carro está aqui</h1>
+        <p>Luxo, desempenho e conforto em um só veículo</p>
+        <a href="#contato" class="btn btn-danger btn-lg mt-3">Quero Comprar</a>
+      </div>
+    </section>
+
+    <!-- ===== Sobre ===== -->
+    <section class="sobre py-5" id="sobre">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <img
+              src="https://source.unsplash.com/600x400/?car,interior"
+              alt="Carro"
+            />
+          </div>
+          <div class="col-md-6">
+            <h2>Sobre o carro</h2>
+            <p>
+              Este carro foi projetado para oferecer a melhor experiência de
+              direção. Com design sofisticado, tecnologia de ponta e máximo
+              conforto, ele é ideal para quem busca qualidade e performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Informações ===== -->
+    <section class="py-5 bg-light" id="info">
+      <div class="container">
+        <h2 class="text-center mb-4">Informações do Carro</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Ano: 2024</li>
+          <li class="list-group-item">Motor: 2.0 Turbo</li>
+          <li class="list-group-item">Câmbio: Automático de 8 marchas</li>
+          <li class="list-group-item">Cor: Preto metálico</li>
+          <li class="list-group-item">Quilometragem: 15.000 km</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Depoimentos ===== -->
+    <section class="py-5" id="depoimentos">
+      <div class="container">
+        <h2 class="text-center mb-4">O que dizem nossos clientes</h2>
+        <div id="carouselDepoimentos" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active text-center">
+              <p>"A melhor compra da minha vida, recomendo demais!"</p>
+              <small>- João Silva</small>
+            </div>
+            <div class="carousel-item text-center">
+              <p>"Carro impecável e atendimento excelente."</p>
+              <small>- Maria Oliveira</small>
+            </div>
+            <div class="carousel-item text-center">
+              <p>"Muito satisfeito com a performance e o conforto."</p>
+              <small>- Carlos Santos</small>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselDepoimentos"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselDepoimentos"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contato ===== -->
+    <section class="py-5 bg-light" id="contato">
+      <div class="container">
+        <h2 class="text-center mb-4">Entre em Contato</h2>
+        <form id="formContato">
+          <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">E-mail</label>
+            <input type="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">WhatsApp</label>
+            <input type="tel" class="form-control" placeholder="(99) 99999-9999" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mensagem</label>
+            <textarea class="form-control" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger w-100">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <p>&copy; 2025 - Venda de Carro Premium. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap + JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Vanilla JS -->
+    <script type="module">
+      document.querySelector("#formContato").addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Obrigado! Entraremos em contato em breve 🚗");
+      });
+    </script>
+  </body>
+</html>
